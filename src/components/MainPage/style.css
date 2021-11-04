@@ -1,0 +1,32 @@
+.img_taca {
+  width: 350px;
+}
+
+.button_result {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+.button_result:hover {
+  background-color: black;
+  color: white;
+}
+
+.header {
+  margin: 10px 5px;
+  background-color: black;
+  color: white;
+}
+
+.header_p {
+  font-size: 20px;
+}
+
+.contrast {
+  color: red;
+}
