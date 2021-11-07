@@ -17,7 +17,7 @@ function App() {
         setRandomNumber(Math.floor(Math.random() * 10000));
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [players]);
 
   return (
     <div className="App">
