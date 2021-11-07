@@ -1,8 +1,6 @@
 import "./style.css";
 
-function MainPage({ setStatus, setPlayers, allPersons }) {
-  const randomNumber = Math.floor(Math.random() * 10000);
-
+function MainPage({ setStatus, setPlayers, allPersons, randomNumber }) {
   function selectPlayers() {
     const personsWithImage = allPersons.filter((person) => {
       if (person.image !== "") {
