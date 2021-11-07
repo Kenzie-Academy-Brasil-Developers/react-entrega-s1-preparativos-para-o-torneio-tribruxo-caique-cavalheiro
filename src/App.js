@@ -5,10 +5,11 @@ import GameResult from "./components/GameResult";
 
 function App() {
   const [allPersons, setAllPersons] = useState([]);
+  const [players, setPlayers] = useState([]);
   const [status, setStatus] = useState(true);
 
   useEffect(() => {
-    fetch(`http://hp-api.herokuapp.com/api/characters/students?page`)
+    fetch(`https://hp-api.herokuapp.com/api/characters/students?page`)
       .then((response) => response.json())
       .then((response) => setAllPersons(response))
       .catch((err) => console.log(err));
@@ -17,9 +18,13 @@ function App() {
   return (
     <div className="App">
       {status ? (
-        <MainPage setStatus={setStatus} />
+        <MainPage
+          setStatus={setStatus}
+          setPlayers={setPlayers}
+          allPersons={allPersons}
+        />
       ) : (
-        <GameResult allPersons={allPersons} setStatus={setStatus} />
+        <GameResult setStatus={setStatus} players={players} />
       )}
     </div>
   );

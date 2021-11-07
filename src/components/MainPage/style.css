@@ -1,4 +1,5 @@
 .img_taca {
+  animation: introduce 2s;
   width: 350px;
 }
 
@@ -11,6 +12,8 @@
   margin-bottom: 20px;
   font-family: "Caveat", cursive;
   font-size: 20px;
+  visibility: visible;
+  animation: btn 2s;
 }
 .button_result:hover {
   background-color: black;
@@ -22,11 +25,56 @@
   background-color: black;
   color: white;
 }
+.header_h2 {
+  color: white;
+  font-size: 2rem;
+}
 
 .header_p {
-  font-size: 20px;
+  color: white;
+  font-size: 1.3rem;
 }
 
 .contrast {
   color: red;
+}
+
+@keyframes introduce {
+  0% {
+    transform: translateY(calc(-30vw + 350px));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes btn {
+  0% {
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .header {
+    font-size: 4rem;
+  }
+  .header_h2 {
+    font-size: 3.5rem;
+  }
+  .header_p {
+    font-size: 2rem;
+    width: 800px;
+  }
+  .header_content_align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

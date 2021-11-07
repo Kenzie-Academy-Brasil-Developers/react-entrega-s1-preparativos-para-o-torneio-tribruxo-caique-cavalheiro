@@ -1,42 +1,48 @@
 import PlayerCard from "../PlayerCard";
+import { useState } from "react";
 import "./style.css";
 
-function GameResult({ allPersons, setStatus }) {
-  const personsWithImage = allPersons.filter((person) => {
-    if (person.image !== "") {
-      return true;
-    }
-    return null;
-  });
-  let player1 = 0;
-  let player2 = 0;
-  let player3 = 0;
-  let loop = true;
-  while (loop) {
-    player1 = Math.floor(Math.random() * personsWithImage.length);
-    player2 = Math.floor(Math.random() * personsWithImage.length);
-    player3 = Math.floor(Math.random() * personsWithImage.length);
-    if (player1 !== player2 && player1 !== player3 && player2 !== player3) {
-      if (
-        personsWithImage[player1].house !== personsWithImage[player2].house &&
-        personsWithImage[player1].house !== personsWithImage[player3].house &&
-        personsWithImage[player2].house !== personsWithImage[player3].house
-      ) {
-        loop = false;
-      }
-    }
+function GameResult({ players, setStatus }) {
+  const [classWinner, setClassWinner] = useState("hidden");
+  const [contentClass, setContentClass] = useState("");
+
+  const selector = Math.floor(Math.random() * 2);
+  const winner = players[selector];
+
+  function buttonResult() {
+    setClassWinner("winner");
+    setContentClass("hidden");
   }
+
   return (
     <div>
       <h1 className="header">Participantes do Torneio Tribruxo</h1>
-      <div className="content_flex">
-        <PlayerCard player={personsWithImage[player1]} />
-        <PlayerCard player={personsWithImage[player2]} />
-        <PlayerCard player={personsWithImage[player3]} />
+      <div className={contentClass}>
+        <div className="content_flex">
+          <PlayerCard player={players[0]} />
+          <PlayerCard player={players[1]} />
+          <PlayerCard player={players[2]} />
+        </div>
+        <p className="text_preButton">
+          Vamos descobrir quem será o bruxo vencedor do torneio!
+        </p>
+        <button className="button_result2" onClick={() => buttonResult()}>
+          Iniciar os jogos
+        </button>
       </div>
-      <button className="button_result" onClick={() => setStatus(true)}>
-        Retornar a tela principal
-      </button>
+      <div className={classWinner}>
+        <div className="content_winner">
+          <p>O vencedor(a) do torneio tribruxo foi: {winner.name}</p>
+          <img
+            className="winner_image"
+            src={winner.image}
+            alt={winner.name}
+          ></img>
+        </div>
+        <button className="button_result2" onClick={() => setStatus(true)}>
+          Voltar ao menu principal
+        </button>
+      </div>
     </div>
   );
 }

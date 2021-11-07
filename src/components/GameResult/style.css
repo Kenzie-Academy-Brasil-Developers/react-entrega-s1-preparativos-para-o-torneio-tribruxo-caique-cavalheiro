@@ -1,7 +1,47 @@
 .content_flex {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.text_preButton {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.button_result2 {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 10px;
+  margin-bottom: 20px;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+.winner {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  padding: 0 60px;
+}
+
+.content_winner {
+  background-color: black;
+  width: 250px;
+}
+.content_winner p {
+  font-size: 1.5rem;
+}
+
+.winner_image {
+  width: 200px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -9,5 +49,11 @@
     flex-direction: row;
     margin: 0 20px;
     justify-content: center;
+  }
+  .content_flex {
+    overflow-x: hidden;
+  }
+  .content_winner {
+    margin-top: 200px;
   }
 }

@@ -1,41 +1,53 @@
 .figure_image {
-  width: 250px;
+  width: 180px;
+  height: 260px;
 }
 
 .red {
+  width: 200px;
+  background-color: red;
+  color: white;
   border: 4px solid red;
-  margin: 45px;
+  margin: 20px;
   font-size: 20px;
   height: fit-content;
 }
 
 .blue {
+  width: 200px;
+  background-color: blue;
+  color: white;
   border: 4px solid blue;
-  margin: 45px;
+  margin: 20px;
   font-size: 20px;
   height: fit-content;
 }
 
 .yellow {
+  width: 200px;
+  background-color: yellow;
+  color: black;
   border: 4px solid yellow;
-  margin: 45px;
+  margin: 20px;
   font-size: 20px;
   height: fit-content;
 }
 
 .green {
+  width: 200px;
+  background-color: green;
+  color: white;
   border: 2px solid green;
-  margin: 45px;
+  margin: 20px;
   font-size: 20px;
   height: fit-content;
-}
-
-figure {
-  width: 350px;
 }
 
 @media screen and (min-width: 1000px) {
   .figure_image {
     height: 360px;
+  }
+  .green .blue .red .yellow {
+    width: 100%;
   }
 }
